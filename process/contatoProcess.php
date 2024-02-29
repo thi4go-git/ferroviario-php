@@ -11,7 +11,7 @@ if (!empty($dadosFormulario)) {
     if ($dadosFormulario["type"] === "create") {
 
         $newContato = new Contato($dadosFormulario["name"], $dadosFormulario["phone"], $dadosFormulario["observations"]);
-        $contatoService->create($newContato);
+        $contatoService->create($newContato, $conn);
 
     } else if ($dadosFormulario["type"] === "edit") {
 
@@ -23,3 +23,5 @@ if (!empty($dadosFormulario)) {
 
 }
 
+// FECHAR CONEXÃO
+$conn = null;
