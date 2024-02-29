@@ -1,0 +1,274 @@
+<!-- Header autenticação GOVBR -->
+<header id="site-header" class="has-navigation-dropdown">
+    <!-- header-wrapper secondary -->
+    <div class="header-wrapper secondary">
+        <div class="site-header-links">
+            <!-- Autenticação com o GOVBR -->
+            <sso-status-bar id="barra-sso"
+                authorization-src="/cdn/oauth2-authorization-client-resources/src/html/oauth2-authorization-url.html"
+                sign-out-href="/cdn/govbrportal/src/html/logout-endpoint.html"
+                sign-in-href="/cdn/govbrportal/src/html/oauth2-authorization-url.html"
+                cookie-monitor-cookie-name="Sso-Authenticated"
+                cookie-monitor-src="https://sso.acesso.gov.br/session-management/html/cookie-monitor-server.html"
+                tabindex="0"><template shadowrootmode="open">
+                    <!-- href="../font/rawline/css/rawline.css" -->
+                    <!-- href="../css/loading.css" -->
+                    <link id="sso-status-bar-stylesheet" rel="stylesheet"
+                        href="https://www.gov.br/cdn/sso-status-bar/src/css/sso-status-bar.css">
+                    <!-- href="../css/sso-status-bar.css" -->
+                    <style>
+                        .sso-status-bar {
+                            display: none;
+                        }
+                    </style>
+                    <aside id="sso-status-bar" class="sso-status-bar closed-menu signed-out">
+                        <section class="status-indicator">
+                            <button class="unknown-signed-state">
+                                <span class="loading"></span>
+                            </button>
+                            <button type="button" class="signed-out" onclick="this.getRootNode().host.signIn(event);">
+                                <span class="sso-status-bar-signed-out-icon"></span>
+
+                                Entrar<span class="texto-desktop"> com o <span>gov.br</span></span>
+                            </button>
+                            <button type="button" class="signed-in" onclick="this.getRootNode().host.openMenu(event);">
+                                <img id="account-picture-icon" class="account-picture-icon"
+                                    alt="Ícone de foto do usuário logado no gov.br"
+                                    src="https://www.gov.br/cdn/sso-status-bar/src/image/user.png">
+                                <!--src="../image/user.png" -->
+                                <span class="account-block-name">Olá, <span id="account-first-name"
+                                        class="account-first-name"></span></span>
+                            </button>
+                        </section>
+
+                        <div class="popup-login-overlay msg-signed-in">
+                            <div></div>
+                            <div><span>Clique e acesse</span> sua conta, documentos, certidões e outros serviços
+                            </div>
+                        </div>
+
+                        <div class="popup-login-overlay msg-signed-out">
+                            <div>Para começar</div>
+                            <div>Clique em <span>Entrar</span> para acessar sua conta gov.br</div>
+                        </div>
+
+                        <div id="govbr-login-overlay-wrapper" role="button" tabindex="0" aria-label="primeiro acesso"
+                            onclick="this.getRootNode().host.closeOverlay(event);">
+                        </div>
+
+                        <section id="menu" class="menu">
+                            <button type="button" class="close-menu" onclick="this.getRootNode().host.closeMenu();">
+                                Fechar
+                            </button>
+                            <p class="account-name-greeting">Olá, <span id="account-name" class="account-name"></span>
+                            </p>
+                            <p id="account-email" class="account-email"></p>
+                            <p id="account-main-reliability-level" class="account-main-reliability-level"
+                                data-main-reliability-level="0"></p>
+                            <section id="custom-links" class="custom-links">
+                                <slot></slot>
+                            </section>
+                            <section class="actions">
+                                <button type="button" onclick="this.getRootNode().host.signOut();">
+                                    Sair da conta
+                                </button>
+                            </section>
+                        </section>
+                    </aside>
+                    <cookie-monitor id="cookie-monitor" monitor-id="sso-status-bar"
+                        server-iframe-src="https://sso.acesso.gov.br/session-management/html/cookie-monitor-server.html"
+                        cookie-name="Sso-Authenticated"><template shadowrootmode="open">
+                            <iframe title="Cookie Monitor" style="display: none;"
+                                src="https://sso.acesso.gov.br/session-management/html/cookie-monitor-server.html?parent-origin=https%3A%2F%2Fwww.gov.br&amp;monitor-id=sso-status-bar&amp;cookie-name=Sso-Authenticated"></iframe>
+                        </template></cookie-monitor>
+                    <oauth2-authorization id="oauth2-authorization"
+                        authorization-src="/cdn/oauth2-authorization-client-resources/src/html/oauth2-authorization-url.html"><template
+                            shadowrootmode="open">
+                            <iframe title="OAuth2 Authorization" style="display: none;"></iframe>
+                        </template></oauth2-authorization>
+                </template>
+                <sso-status-bar-section title="Minha conta"><template shadowrootmode="open">
+                        <link id="sso-status-bar-section-stylesheet" rel="stylesheet"
+                            href="https://www.gov.br/cdn/sso-status-bar/src/css/sso-status-bar-section.css">
+                        <!-- href="../css/sso-status-bar-section.css" -->
+                        <style>
+                            .sso-status-bar-section {
+                                display: none;
+                            }
+                        </style>
+                        <section id="sso-status-bar-section" class="sso-status-bar-section">
+                            <h1 id="title">Minha conta</h1>
+                            <div>
+                                <slot></slot>
+                            </div>
+                        </section>
+                    </template>
+                    <sso-status-bar-item title="Dados Pessoais" class="acessogov-menu-cpf" style="display: block;"
+                        href="https://contas.acesso.gov.br/alteracao_cadastro"><template shadowrootmode="open">
+                            <link id="sso-status-bar-item-stylesheet" rel="stylesheet"
+                                href="https://www.gov.br/cdn/sso-status-bar/src/css/sso-status-bar-item.css">
+                            <!-- href="../css/sso-status-bar-item.css" -->
+                            <style>
+                                .sso-status-bar-item {
+                                    display: none;
+                                }
+                            </style>
+                            <div id="sso-status-bar-item" class="sso-status-bar-item">
+                                <a id="link" href="https://contas.acesso.gov.br/alteracao_cadastro">Dados
+                                    Pessoais</a>
+                            </div>
+                        </template>
+                    </sso-status-bar-item>
+                    <sso-status-bar-item title="Segurança da Conta" class="acessogov-menu-cpf" style="display: block;"
+                        href="https://contas.acesso.gov.br/seguranca"><template shadowrootmode="open">
+                            <link id="sso-status-bar-item-stylesheet" rel="stylesheet"
+                                href="https://www.gov.br/cdn/sso-status-bar/src/css/sso-status-bar-item.css">
+                            <!-- href="../css/sso-status-bar-item.css" -->
+                            <style>
+                                .sso-status-bar-item {
+                                    display: none;
+                                }
+                            </style>
+                            <div id="sso-status-bar-item" class="sso-status-bar-item">
+                                <a id="link" href="https://contas.acesso.gov.br/seguranca">Segurança da Conta</a>
+                            </div>
+                        </template>
+                    </sso-status-bar-item>
+                    <sso-status-bar-item title="Privacidade" class="acessogov-menu-cpf" style="display: block;"
+                        href="https://contas.acesso.gov.br/privacidade"><template shadowrootmode="open">
+                            <link id="sso-status-bar-item-stylesheet" rel="stylesheet"
+                                href="https://www.gov.br/cdn/sso-status-bar/src/css/sso-status-bar-item.css">
+                            <!-- href="../css/sso-status-bar-item.css" -->
+                            <style>
+                                .sso-status-bar-item {
+                                    display: none;
+                                }
+                            </style>
+                            <div id="sso-status-bar-item" class="sso-status-bar-item">
+                                <a id="link" href="https://contas.acesso.gov.br/privacidade">Privacidade</a>
+                            </div>
+                        </template>
+                    </sso-status-bar-item>
+                    <sso-status-bar-item title="Vincular empresas via e-CNPJ" class="acessogov-menu-cnpj"
+                        style="display: none" href="https://empresas.acesso.gov.br"><template shadowrootmode="open">
+                            <link id="sso-status-bar-item-stylesheet" rel="stylesheet"
+                                href="https://www.gov.br/cdn/sso-status-bar/src/css/sso-status-bar-item.css">
+                            <!-- href="../css/sso-status-bar-item.css" -->
+                            <style>
+                                .sso-status-bar-item {
+                                    display: none;
+                                }
+                            </style>
+                            <div id="sso-status-bar-item" class="sso-status-bar-item">
+                                <a id="link" href="https://empresas.acesso.gov.br/">Vincular empresas via e-CNPJ</a>
+                            </div>
+                        </template>
+                    </sso-status-bar-item>
+                </sso-status-bar-section>
+                <sso-status-bar-section title="Serviços"><template shadowrootmode="open">
+                        <link id="sso-status-bar-section-stylesheet" rel="stylesheet"
+                            href="https://www.gov.br/cdn/sso-status-bar/src/css/sso-status-bar-section.css">
+                        <!-- href="../css/sso-status-bar-section.css" -->
+                        <style>
+                            .sso-status-bar-section {
+                                display: none;
+                            }
+                        </style>
+                        <section id="sso-status-bar-section" class="sso-status-bar-section">
+                            <h1 id="title">Serviços</h1>
+                            <div>
+                                <slot></slot>
+                            </div>
+                        </section>
+                    </template>
+                    <sso-status-bar-item title="Carteira de Documentos" class="acessogov-menu-cpf"
+                        style="display: block;" href="https://servicos.acesso.gov.br/carteira"><template
+                            shadowrootmode="open">
+                            <link id="sso-status-bar-item-stylesheet" rel="stylesheet"
+                                href="https://www.gov.br/cdn/sso-status-bar/src/css/sso-status-bar-item.css">
+                            <!-- href="../css/sso-status-bar-item.css" -->
+                            <style>
+                                .sso-status-bar-item {
+                                    display: none;
+                                }
+                            </style>
+                            <div id="sso-status-bar-item" class="sso-status-bar-item">
+                                <a id="link" href="https://servicos.acesso.gov.br/carteira">Carteira de
+                                    Documentos</a>
+                            </div>
+                        </template>
+                    </sso-status-bar-item>
+                    <sso-status-bar-item title="Baixar certidões" class="acessogov-menu-cpf" style="display: block;"
+                        href="https://servicos.acesso.gov.br/certidoes"><template shadowrootmode="open">
+                            <link id="sso-status-bar-item-stylesheet" rel="stylesheet"
+                                href="https://www.gov.br/cdn/sso-status-bar/src/css/sso-status-bar-item.css">
+                            <!-- href="../css/sso-status-bar-item.css" -->
+                            <style>
+                                .sso-status-bar-item {
+                                    display: none;
+                                }
+                            </style>
+                            <div id="sso-status-bar-item" class="sso-status-bar-item">
+                                <a id="link" href="https://servicos.acesso.gov.br/certidoes">Baixar certidões</a>
+                            </div>
+                        </template>
+                    </sso-status-bar-item>
+                    <sso-status-bar-item title="Assinar documentos digitalmente" class="acessogov-menu-cpf"
+                        style="display: block;" href="https://assinador.iti.br/assinatura"><template
+                            shadowrootmode="open">
+                            <link id="sso-status-bar-item-stylesheet" rel="stylesheet"
+                                href="https://www.gov.br/cdn/sso-status-bar/src/css/sso-status-bar-item.css">
+                            <!-- href="../css/sso-status-bar-item.css" -->
+                            <style>
+                                .sso-status-bar-item {
+                                    display: none;
+                                }
+                            </style>
+                            <div id="sso-status-bar-item" class="sso-status-bar-item">
+                                <a id="link" href="https://assinador.iti.br/assinatura">Assinar documentos
+                                    digitalmente</a>
+                            </div>
+                        </template>
+                    </sso-status-bar-item>
+                    <sso-status-bar-item title="Notificações" class="acessogov-menu-cpf" style="display: block;"
+                        href="https://servicos.acesso.gov.br/notificacoes"><template shadowrootmode="open">
+                            <link id="sso-status-bar-item-stylesheet" rel="stylesheet"
+                                href="https://www.gov.br/cdn/sso-status-bar/src/css/sso-status-bar-item.css">
+                            <!-- href="../css/sso-status-bar-item.css" -->
+                            <style>
+                                .sso-status-bar-item {
+                                    display: none;
+                                }
+                            </style>
+                            <div id="sso-status-bar-item" class="sso-status-bar-item">
+                                <a id="link" href="https://servicos.acesso.gov.br/notificacoes">Notificações</a>
+                            </div>
+                        </template>
+                    </sso-status-bar-item>
+                    <sso-status-bar-item title="Ajuda da conta gov.br"
+                        href="https://www.gov.br/governodigital/pt-br/conta-gov-br/ajuda-da-conta-gov.br"><template
+                            shadowrootmode="open">
+                            <link id="sso-status-bar-item-stylesheet" rel="stylesheet"
+                                href="https://www.gov.br/cdn/sso-status-bar/src/css/sso-status-bar-item.css">
+                            <!-- href="../css/sso-status-bar-item.css" -->
+                            <style>
+                                .sso-status-bar-item {
+                                    display: none;
+                                }
+                            </style>
+                            <div id="sso-status-bar-item" class="sso-status-bar-item">
+                                <a id="link"
+                                    href="https://www.gov.br/governodigital/pt-br/conta-gov-br/ajuda-da-conta-gov.br">Ajuda
+                                    da conta gov.br</a>
+                            </div>
+                        </template>
+                    </sso-status-bar-item>
+                </sso-status-bar-section>
+            </sso-status-bar>
+            <!-- FIM Autenticação com o GOVBR -->
+        </div>
+    </div>
+    <!-- FIM header-wrapper secondary -->
+</header>
+<!-- FIM Header autenticação GOVBR -->
+<hr>
