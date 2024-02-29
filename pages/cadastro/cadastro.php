@@ -23,7 +23,7 @@ require_once("../../config/baseUrl.php");
         <form id="create-form" action="<?= $BASE_URL ?>process/contatoProcess.php" method="POST">
             <input type="hidden" name="type" value="create">
             <div class="form-group">
-                <label for="name">Nome . </label>
+                <label for="name">Nome: </label>
                 <input type="text" class="form-control input" id="name" name="name" placeholder="Digite o nome"
                     required>
             </div>
@@ -47,7 +47,6 @@ require_once("../../config/baseUrl.php");
     <script>
         // Script para redirecionar o usuário ao clicar no botão Voltar
         document.getElementById('btn-voltar').addEventListener('click', function () {
-            // Redireciona para a página inicial
             window.location.href = '<?= $BASE_URL ?>';
         });
     </script>
