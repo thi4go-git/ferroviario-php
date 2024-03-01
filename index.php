@@ -1,6 +1,6 @@
 <!-- incluir a URL base do sistema -->
 <?php
-require_once("config/baseUrl.php");
+require_once("config/global.php");
 ?>
 
 

@@ -1,7 +1,6 @@
 <?php
 
-session_start();
-
+require_once("../config/global.php");
 require_once("../model/Contato.php");
 require_once("ContatoService.php");
 include_once("../conexao/Conexao.php");
@@ -10,14 +9,19 @@ include_once("../conexao/Conexao.php");
 
 class ContatoServiceImpl implements ContatoService
 {
+    private $conn;
 
-    public function create(Contato $contato, $conn)
+    public function __construct(PDO $conn)
     {
-        echo ($contato->getName());
+        $this->conn = $conn;
+    }
+
+    public function create(Contato $contato)
+    {
 
         $query = "INSERT INTO contacts (name, phone, observations) VALUES (:name, :phone, :observations)";
 
-        $stmt = $conn->prepare($query);
+        $stmt = $this->conn->prepare($query);
 
         try {
             // Executar a inserção dos dados
@@ -28,6 +32,11 @@ class ContatoServiceImpl implements ContatoService
                     ':observations' => $contato->getObservations()
                 )
             );
+
+
+            $_SESSION["msg"] = "Contato salvo com sucesso: " . $contato->getName();
+            header("Location: http://localhost/ferroviario-php/");// redirecionar após salvar
+
         } catch (PDOException $e) {
             $error = $e->getMessage();
             echo "Erro: $error";

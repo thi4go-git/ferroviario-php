@@ -3,7 +3,7 @@
 interface ContatoService
 {
 
-    public function create(Contato $contato,$conn);
+    public function create(Contato $contato);
     public function findAll();
 
 }

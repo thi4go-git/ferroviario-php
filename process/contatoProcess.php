@@ -4,24 +4,21 @@ require_once("../service/ContatoServiceImpl.php");
 require_once("../model/Contato.php");
 
 $dadosFormulario = $_POST;
-$contatoService = new ContatoServiceImpl();
-
+$contatoService = new ContatoServiceImpl($conn);
+$typeForm = $dadosFormulario["type"];
 
 if (!empty($dadosFormulario)) {
-    if ($dadosFormulario["type"] === "create") {
+    if ($typeForm === "create") {
 
         $newContato = new Contato($dadosFormulario["name"], $dadosFormulario["phone"], $dadosFormulario["observations"]);
-        $contatoService->create($newContato, $conn);
+        $contatoService->create($newContato);
 
-    } else if ($dadosFormulario["type"] === "edit") {
+    } else if ($typeForm === "edit") {
 
-    } else if ($dadosFormulario["type"] === "delete") {
+    } else if ($typeForm === "delete") {
 
     }
 
 } else {
 
 }
-
-// FECHAR CONEXÃO
-$conn = null;
