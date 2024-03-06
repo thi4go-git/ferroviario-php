@@ -8,7 +8,7 @@ require_once("config/global.php");
 <html lang="pt-br">
 
 <head>
-    <title>Autorizacoes TESTE</title>
+    <title>SFE - Autorização</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
