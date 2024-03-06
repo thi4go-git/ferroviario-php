@@ -10,11 +10,15 @@ require_once("config/global.php");
 <head>
     <title>Autorizacoes TESTE</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- CSS Tema-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- CSS 
+
+-->
     <link href="css/estilo.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-        integrity="sha512-ApT8NtmKuTqJe1w5swHyJvZh7Z/PGXWeMe+6MH3tzmjtjWMb9UoqmJb/kK+L3mlgW+9WZeXW/4sX8FmD1RhTEw=="
-        crossorigin="anonymous" />
+
+
 </head>
 
 <body
