@@ -20,9 +20,6 @@ require_once("config/global.php");
 <body
     class="default-header-template portal-institucional cover-layout-layout-vazio template-view portaltype-collective-cover-content site-pt-br section-assuntos subsection-ferrovias subsection-ferrovias-autorizacoes-ferroviarias-1 subsection-ferrovias-autorizacoes-ferroviarias-1-autorizacoes-ferroviarias-1 userrole-anonymous">
 
-    <!-- INCLUIR MÉTODO DE LOGIN COM GOVBR -->
-    <?php include_once("template/header.html"); ?>
-
 
     <h1 id="page-title-alt" class="sr-only">Autorizações Ferroviárias</h1>
 
@@ -356,10 +353,6 @@ require_once("config/global.php");
             <!-- FIM DO MAIN -->
         </div>
         <!-- FIM div id  MAIN -->
-
-
-        <!-- INCLUIR rodapé -->
-        <?php include_once("template/footer.html"); ?>
 
     </div>
     <!-- fim DIV id="wrapper" -->
