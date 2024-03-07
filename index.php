@@ -60,7 +60,7 @@ require_once("config/global.php");
                                                     rel="noopener noreferrer" tabindex="-1" target="_blank"
                                                     title="http://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/L14273.htm"
                                                     data-mce-href="http://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/L14273.htm">Lei
-                                                    nº 14.273</a><span>, de 23 de dezembro de 2021, denominada "Lei
+                                                    nº 14.273</a><span>, de s23 de dezembro de 2021, denominada "Lei
                                                     das Ferrovias", foi instituído o novo regime regulatório de
                                                     autorização voltado à exploração indireta do serviço de
                                                     transporte ferroviário federal, mediante outorga em regime de
