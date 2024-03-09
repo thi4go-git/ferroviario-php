@@ -3,4 +3,4 @@
 
 session_start();
 
-$BASE_URL = "http://localhost/ferroviario-php/";
+$BASE_URL = "http://localhost";
