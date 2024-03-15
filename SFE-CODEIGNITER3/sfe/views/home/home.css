@@ -1,0 +1,266 @@
+/* ------------------------------------------------------------- HEADER */
+#site-header.sticky-header .main {
+    position: fixed;
+    width: 100%;
+    z-index: 4;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    min-height: 88px;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    background-color: rgb(237, 240, 233);
+}
+
+#site-header .main.container {
+    width: 100%;
+    max-width: none;
+    padding: 10px;
+}
+
+header#site-header.has-navigation-dropdown,
+header#site-header.has-navigation-dropdown,
+#site-header .header-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 1152px;
+    padding-right: 0;
+    padding-left: 0;
+    position: fixed;
+}
+
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+    font-family: "rawline", helvetica, arial, sans-serif;
+    font-weight: 350;
+    font-size: 1.6rem;
+    color: #555;
+    line-height: 1.75;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    letter-spacing: normal;
+    vertical-align: baseline
+}
+
+html {
+    font-size: 65.0%;
+    line-height: 1.75
+}
+
+.aa-Form {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #ededed;
+    border-radius: 6px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    line-height: 1em;
+    margin-right: 5px;
+    position: relative;
+    width: 100%;
+    border: 1px solid #ededed
+}
+
+
+.aa-SubmitButton,
+.aa-LoadingIndicator {
+    height: 42px;
+    width: 42px;
+}
+
+.aa-SubmitButton {
+    background-color: green;
+    background-color: green;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    border: 0;
+    margin: 0;
+    padding: 0
+}
+
+.aa-SubmitIcon {
+    color: yellowgreen;
+}
+
+.aa-SubmitButton svg {
+    display: none;
+    color: yellowgreen;
+}
+
+.aa-SubmitButton::before {
+    font-family: 'Font Awesome 5 Free';
+    content: '\F002';
+    font-size: 20px;
+    color: #1351b4;
+    font-weight: 900;
+    cursor: pointer
+}
+
+.aa-Input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: none;
+    border: 0;
+    color: rgba(38, 38, 39, 1);
+    color: rgba(var(--aa-text-color-rgb), var(--aa-text-color-alpha));
+    font: inherit;
+    height: 70px;
+    height: var(--aa-search-input-height);
+    padding: 0 0 0 32px;
+    width: 100%
+}
+
+#site-header .header-wrapper {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    position: relative
+}
+
+.descricao-menu {
+    padding: 10px;
+}
+
+
+#site-header .header-wrapper .site-name-wrapper {
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.conteudo {
+    margin-top: 100px;
+}
+
+.input-pesquisa {
+    border: none;
+    height: 40px;
+    width: 300px;
+}
+
+/* ----------------------------------------------------- FIM HEADER */
+
+div.card {
+    border: none;
+    margin: 0 8px 16px;
+}
+
+.card-tamanho {
+    width: 270px;
+    height: 270px;
+    min-width: 270px;
+    min-height: 270px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    margin: 10px;
+    float: left;
+}
+
+.titulo {
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    margin: 30px;
+
+}
+
+.callout {
+    color: #555;
+    background: #eee;
+    padding: 1em;
+    border-left: 1em solid #ccc;
+    clear: both;
+}
+
+.card .govbr-card-content {
+    -ms-flex-align: center;
+    align-items: center;
+    background: #f8f8f8;
+    bottom: 0;
+    -webkit-box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    left: 0;
+    margin: 0 8px 16px;
+    padding: 12px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-decoration: none;
+}
+
+.card .govbr-card-content .front {
+    text-align: center;
+}
+
+.govbr-cards .wrapper {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card .govbr-card-content .front .titulo {
+    color: #0c326f;
+    display: block;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    margin: 5px;
+    min-height: 0;
+    padding: 5px;
+}
+
+.card .govbr-card-content .front .icone {
+    color: #0c326f;
+    font-size: 50px;
+}
+
+.botoes {
+    padding: 90px;
+}
+
+.fluxograma-processo {
+    border: #ccc;
+}
