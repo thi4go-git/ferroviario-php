@@ -4,6 +4,7 @@ require_once("../config/global.php");
 require_once("../model/Contato.php");
 require_once("ContatoService.php");
 include_once("../conexao/Conexao.php");
+include_once("../conexao/ConexaoDupla.php");
 
 
 
